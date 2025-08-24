@@ -1,0 +1,10 @@
+email,format,mx,ping,status
+john.doe@gmail.com,True,True,risky,risky
+hello@spotify.com,True,True,risky,risky
+user@github.com,True,True,risky,risky
+test@nonexistentdomain.xyz,True,True,risky,risky
+support@apple.com,True,True,risky,risky
+contact@netflix.com,True,True,risky,risky
+info@amazon.com,True,True,risky,risky
+admin@microsoft.com,True,True,risky,risky
+jane.smith@yahoo.com,True,True,risky,risky

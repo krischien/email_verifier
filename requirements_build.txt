@@ -1,0 +1,8 @@
+# Requirements for building the executable
+PyInstaller==6.15.0
+
+# Core app dependencies (these will be bundled into the exe)
+pandas==2.1.4
+dnspython==2.4.2
+email-validator==2.1.0
+numpy==1.24.3
