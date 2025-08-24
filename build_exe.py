@@ -19,7 +19,7 @@ def build_exe():
         main_script,
         '--onefile',  # Create a single executable file
         '--windowed',  # Don't show console window (Windows)
-        '--name=EmailVerifierPro',  # Name of the executable
+        '--name=MailCommanderPro',  # Name of the executable
         f'--distpath={output_dir}',  # Output directory
         '--add-data=requirements.txt;.',  # Include requirements file
         '--hidden-import=dns.resolver',  # Ensure DNS resolver is included
@@ -36,7 +36,7 @@ def build_exe():
         '--log-level=WARN',  # Reduce log verbosity
     ]
     
-    print("Building Email Verifier Pro executable...")
+    print("Building Mail Commander Pro executable...")
     print(f"Main script: {main_script}")
     print(f"Output directory: {output_dir}")
     print("PyInstaller arguments:", args)
@@ -46,7 +46,7 @@ def build_exe():
         PyInstaller.__main__.run(args)
         print(f"\n✅ Build completed successfully!")
         print(f"Executable location: {output_dir}")
-        print(f"Executable name: EmailVerifierPro.exe")
+        print(f"Executable name: MailCommanderPro.exe")
         
     except Exception as e:
         print(f"\n❌ Build failed: {str(e)}")

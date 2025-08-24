@@ -1,0 +1,44 @@
+{
+    "default_provider": "openai",
+    "providers": {
+        "openai": {
+            "api_key": "",
+            "model": "gpt-4",
+            "temperature": 0.7,
+            "max_tokens": 4000
+        },
+        "anthropic": {
+            "api_key": "",
+            "model": "claude-3-sonnet",
+            "temperature": 0.7,
+            "max_tokens": 4000
+        },
+        "google": {
+            "api_key": "",
+            "model": "gemini-pro",
+            "temperature": 0.7,
+            "max_tokens": 8000
+        },
+        "local": {
+            "api_key": "",
+            "model": "llama2",
+            "temperature": 0.7,
+            "max_tokens": 4000
+        }
+    },
+    "default_settings": {
+        "tone": "professional",
+        "length": "medium",
+        "industry": "general",
+        "target_audience": "customers"
+    },
+    "rate_limiting": {
+        "requests_per_minute": 10,
+        "max_daily_requests": 100
+    },
+    "cost_tracking": {
+        "enabled": true,
+        "daily_budget": 5.0,
+        "currency": "USD"
+    }
+}

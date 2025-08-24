@@ -1,12 +1,14 @@
-# Email Verifier Pro
+# Mail Commander Pro
 
-A comprehensive Python application for verifying email addresses from CSV/Excel files with a modern GUI interface and command-line support.
+A comprehensive Python application for email verification and campaign management with a modern GUI interface and command-line support.
 
 ## Features
 
 - **Email Format Validation**: Checks email syntax using RFC standards
 - **MX Record Verification**: Validates domain MX records
 - **SMTP Connection Testing**: Tests actual email server connectivity
+- **Email Campaign Sender**: Send bulk emails to verified addresses with configurable SMTP settings
+- **AI Message Creator**: Generate compelling email content using AI with multiple provider support
 - **Progress Tracking**: Real-time progress bar with cancellation support
 - **Multiple Output Formats**: Generate separate CSV files for different result categories
 - **Modern GUI**: User-friendly interface built with tkinter
@@ -103,6 +105,76 @@ The application performs a three-step verification process:
   - **Risky**: Email server responds but with warnings/restrictions
   - **Invalid**: Email rejected (SMTP 550) or connection failed
 
+## Email Campaign Sender
+
+After verifying emails, you can send bulk email campaigns to your verified addresses:
+
+### Features
+- **Configurable SMTP Settings**: Support for Gmail, Outlook, Yahoo, and custom providers
+- **Rate Limiting**: Configurable sending rate to avoid spam filters
+- **Personalization**: Use {name} placeholder in subject and body
+- **Progress Tracking**: Real-time progress bar with cancellation support
+- **Target Selection**: Send to valid emails only or valid + risky emails
+
+### Setup
+1. **Select Email Provider**: Choose from predefined configurations or use custom settings
+2. **Enter Credentials**: Username (email) and password/app password
+3. **Test Connection**: Verify SMTP settings before sending
+4. **Configure Content**: Set subject and body with optional personalization
+5. **Send Campaign**: Choose target audience and start sending
+
+### Supported Providers
+- **Gmail**: smtp.gmail.com (port 587/465)
+- **Outlook**: smtp-mail.outlook.com (port 587)
+- **Yahoo**: smtp.mail.yahoo.com (port 587)
+- **Custom**: Any SMTP server with your own settings
+
+### Rate Limits
+- **Default**: 60 emails per minute
+- **Configurable**: Adjust based on your provider's limits
+- **Gmail**: 500/day (regular), 2000/day (Workspace)
+- **Outlook**: 300/day (regular), 10,000/day (Business)
+
+## AI Message Creator
+
+Create compelling email content using advanced AI models with multiple provider support:
+
+### Features
+- **Multiple AI Providers**: OpenAI GPT, Anthropic Claude, Google Gemini, Local Ollama
+- **Configurable Settings**: Model selection, temperature, tone, length, industry focus
+- **Quick Templates**: Pre-built prompts for common email types
+- **Smart Refinement**: Improve generated content with AI-powered suggestions
+- **Seamless Integration**: Send generated content directly to Campaign Commander
+- **Cost Tracking**: Monitor API usage and estimated costs
+
+### Supported Providers
+- **OpenAI**: GPT-4, GPT-4 Turbo, GPT-3.5 Turbo
+- **Anthropic**: Claude 3 Opus, Sonnet, Haiku
+- **Google**: Gemini Pro, Gemini Pro Vision
+- **Local**: Llama2, Mistral, CodeLlama (via Ollama)
+
+### Quick Templates
+- **Welcome**: New customer onboarding
+- **Follow-up**: Re-engagement campaigns
+- **Product Launch**: Feature announcements
+- **Abandoned Cart**: Recovery campaigns
+- **Newsletter**: Regular updates
+- **Promotion**: Sales and discounts
+
+### Setup
+1. **Select AI Provider**: Choose from supported providers
+2. **Enter API Key**: Add your provider-specific API key
+3. **Test Connection**: Verify AI service connectivity
+4. **Configure Settings**: Adjust tone, length, industry focus
+5. **Generate Content**: Describe your email and let AI create it
+6. **Refine & Send**: Improve content and send to Campaign Commander
+
+### Cost Considerations
+- **OpenAI GPT-4**: ~$0.03 per 1K tokens
+- **Anthropic Claude**: ~$0.015 per 1K tokens
+- **Google Gemini**: ~$0.0005 per 1K tokens
+- **Local Models**: Free (requires Ollama setup)
+
 ## Result Categories
 
 - **Valid**: Passes all three checks, safe to use
@@ -178,11 +250,14 @@ The application gracefully handles:
 ### Project Structure
 
 ```
-email_verifier/
+mail_commander_pro/
 ├── email_verifier.py      # Core verification logic
 ├── csv_processor.py       # CSV/Excel file handling
 ├── main_app.py           # GUI application
 ├── cli_version.py        # Command-line interface
+├── email_sender.py       # Email campaign sender
+├── ai_message_creator.py # AI-powered content generation
+├── ai_config.json        # AI configuration settings
 ├── requirements.txt      # Python dependencies
 ├── sample_emails.csv     # Test data
 └── README.md            # This file
